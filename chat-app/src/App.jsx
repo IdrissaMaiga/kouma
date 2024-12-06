@@ -13,12 +13,14 @@ function App() {
   const [file, setFile] = useState(null);
   const [users, setUsers] = useState([]);
   const [globalUsers, setGlobalUsers] = useState(0);
+  const [joinedRoom, setJoinedRoom] = useState(false);
 
 
   // Join room
   const joinRoom = () => {
     if (username && roomId) {
       socket.emit("join-room", { roomId, username });
+      setJoinedRoom(true)
     }
   };
 
@@ -28,11 +30,6 @@ function App() {
       const timestamp = new Date().toLocaleTimeString();
       socket.emit("send-message", { roomId, message, sender: username, timestamp });
       setMessage("");
-    }
-  };
-  const handleKeyPress = (e) => {
-    if (e.key === 'Enter') {
-      sendMessage();
     }
   };
 
@@ -142,7 +139,7 @@ function App() {
   ))}
 </div>
 
-<div style={styles.form}>
+{username&&joinedRoom&&<div><div style={styles.form}>
   <input
     type="text"
     placeholder="Enter message"
@@ -162,7 +159,7 @@ function App() {
         <button onClick={uploadFile} style={styles.button}>
           Upload File
         </button>
-      </div>
+      </div></div>}
     </div>
   );
 }
