@@ -3,6 +3,9 @@
 Kouma is a real-time communication platform that allows users to chat with each other and interact with an AI model. The platform is designed to facilitate seamless communication, providing an intuitive interface and a secure environment for users. 
 
 [Visit the live site here](https://koumachat.filmutunnel.site/)
+![image](https://github.com/user-attachments/assets/46b5804a-7a6e-419c-878c-61c53b6078e7)
+![image](https://github.com/user-attachments/assets/b851ed4f-a650-41f8-aed3-64bdcfa65ec8)
+
 
 ## Features
 
